@@ -42,8 +42,9 @@ remove 'fat_free_crm'
 
 group :development, :test do
   # Uncomment the following two gems to deploy via Capistrano
-  gem 'capistrano'
-  gem 'capistrano_colors'
+  gem 'capistrano', '~> 2.13'
+  gem 'capistrano-ext', '~> 1.2.1'
+  gem 'rvm-capistrano', '~> 1.2.7', :require => false
 
   gem 'rspec-rails', '~> 2.9.0'
   gem 'headless'
@@ -67,10 +68,7 @@ group :test do
   end
 end
 
-group :heroku do
-  gem 'unicorn', :platform => :ruby
-end
-
+gem 'unicorn'
 
 # Gems used only for assets and not required
 # in production environments by default.
