@@ -40,12 +40,26 @@ gem 'premailer', :require => false
 # Remove fat_free_crm dependency, to stop it from being auto-required too early.
 remove 'fat_free_crm'
 
-group :development, :test do
+group :development do
+  gem 'thin'
+  gem 'quiet_assets'
+  gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git', ref: 'bef0c494956e516540b7a9e72fa03be6576031dd'
+  # Mailcatcher is a tool to allow to intercept and view HTML email in development
+  gem 'mailcatcher', require: false  
+
+  gem 'guard-rspec', require: false
+
+  # Gems for security and best practices
+  gem 'brakeman', require: false
+  gem 'rails_best_practices', require: false
   # Uncomment the following two gems to deploy via Capistrano
   gem 'capistrano', '~> 2.13'
   gem 'capistrano-ext', '~> 1.2.1'
+  # If deploying to Capistrano and requiring RVM
   gem 'rvm-capistrano', '~> 1.2.7', :require => false
+end
 
+group :development, :test do
   gem 'rspec-rails', '~> 2.9.0'
   gem 'headless'
   unless ENV["CI"]
@@ -57,7 +71,6 @@ end
 
 group :test do
   gem 'capybara', '~> 1.1' # v2 and up is not r1.8 compatible.
-  gem 'spork'
   gem 'database_cleaner'
   gem "acts_as_fu", "~> 0.0.8"
 
@@ -75,9 +88,11 @@ gem 'unicorn'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-  gem 'execjs'
-  gem 'therubyracer', :platform => :ruby  # C Ruby (MRI) or Rubinius, but NOT Windows
   gem 'uglifier',     '>= 1.0.3'
+  # gem 'execjs'
+  # unless ENV["CI"]
+  #   gem 'therubyracer', :platform => :ruby
+  # end
 end
 
 gem 'turbo-sprockets-rails3'

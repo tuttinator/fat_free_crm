@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121003063155) do
+ActiveRecord::Schema.define(:version => 20121221033947) do
 
   create_table "account_contacts", :force => true do |t|
     t.integer  "account_id"
@@ -353,8 +353,8 @@ ActiveRecord::Schema.define(:version => 20121003063155) do
     t.integer  "taggable_id"
     t.integer  "tagger_id"
     t.string   "tagger_type"
-    t.string   "taggable_type"
-    t.string   "context"
+    t.string   "taggable_type", :limit => 50
+    t.string   "context",       :limit => 50
     t.datetime "created_at"
   end
 

@@ -52,7 +52,8 @@ Pull requests and bug reports are always welcome!
 
 ## System Requirements
 
-* Ruby v1.8.7 or v1.9.2
+* Ruby v1.9.3
+  * Note that Ruby v1.8.7 was supported until v0.11.4 (see https://github.com/fatfreecrm/fat_free_crm/tree/ruby1.8)
 * MySQL v4.1.1 or later (v5+ is recommended), SQLite v3.4 or later, or Postgres 8.4.8 or later.
 * ImageMagick (optional, only needed if you would like to use avatars)
 
@@ -92,6 +93,8 @@ This is the best way to deploy Fat Free CRM if you need to add plugins or make a
 
 
 ## Upgrading from previous versions of Fat Free CRM
+
+If you are upgrading from version 0.11.3 (Dec 21st 2012) or below, please see an [important fix for country data](https://github.com/fatfreecrm/fat_free_crm/wiki/The-Countries-Problem-and-How-to-Fix-It)
 
 If you are upgrading from version 0.10.1 or below to the latest Rails 3.x version, your database schema
 needs to be updated.
@@ -134,15 +137,16 @@ the concepts:
 
 ## Contributors
 
+* [Michael Dvorkin (@michaeldv)](https://github.com/michaeldv) - Founding creator
 * [Nathan Broadbent (@ndbroadbent)](https://github.com/ndbroadbent)
 * [Ben Tillman (@warp)](https://github.com/warp)
 * [Steve Kenworthy (@steveyken)](https://github.com/steveyken)
 
-See the [contributors graph](https://github.com/fatfreecrm/fat_free_crm/graphs/contributors) for further details.
+See the [contributors graph](https://github.com/fatfreecrm/fat_free_crm/graphs/contributors) and the [contributors file](https://github.com/fatfreecrm/fat_free_crm/blob/master/CONTRIBUTORS) for further details.
 
 ## License
 
-Copyright (c) 2008-2011 by Michael Dvorkin. All rights reserved.
+Copyright (c) 2008-2013 by Michael Dvorkin. All rights reserved.
 
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU Affero General Public License as published by

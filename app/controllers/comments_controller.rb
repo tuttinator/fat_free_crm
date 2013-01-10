@@ -18,7 +18,7 @@
 class CommentsController < ApplicationController
   before_filter :require_user
 
-  COMMENTABLE = %w(account_id campaign_id contact_id lead_id opportunity_id task_id).freeze
+
 
   # GET /comments
   # GET /comments.json
@@ -77,7 +77,9 @@ class CommentsController < ApplicationController
   # POST /comments.xml                                                     AJAX
   #----------------------------------------------------------------------------
   def create
-    @comment = Comment.new(params[:comment])
+    attributes = params[:comment] || {}
+    attributes.merge!(:user_id => current_user.id)
+    @comment = Comment.new(attributes)
 
     # Make sure commentable object exists and is accessible to the current user.
     model, id = @comment.commentable_type, @comment.commentable_id
@@ -113,8 +115,7 @@ private
 
   #----------------------------------------------------------------------------
   def extract_commentable_name(params)
-    commentable = (params.keys & COMMENTABLE).first
-    commentable.sub('_id', '') if commentable
+    params.keys.detect {|x| x =~ /_id$/ }.try(:sub, /_id$/, '')
   end
 
   #----------------------------------------------------------------------------
