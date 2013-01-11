@@ -152,8 +152,6 @@ GEM
     libwebsocket (0.1.7.1)
       addressable
       websocket
-    linecache (0.46)
-      rbx-require-relative (> 0.0.4)
     listen (0.7.1)
     lumberjack (1.0.2)
     mail (2.4.4)
@@ -256,7 +254,6 @@ GEM
     ransack_ui (1.0.2)
       ransack
       ransack_chronic (>= 1.1.0)
-    rbx-require-relative (0.0.9)
     rdoc (3.12)
       json (~> 1.4)
     responds_to_parent (1.1.0)
@@ -273,11 +270,6 @@ GEM
       activesupport (>= 3.0)
       railties (>= 3.0)
       rspec (~> 2.9.0)
-    ruby-debug (0.10.4)
-      columnize (>= 0.1)
-      ruby-debug-base (~> 0.10.4.0)
-    ruby-debug-base (0.10.4)
-      linecache (>= 0.3)
     ruby2ruby (2.0.1)
       ruby_parser (~> 3.0.0)
       sexp_processor (~> 4.0)
@@ -389,7 +381,6 @@ DEPENDENCIES
   ransack_ui (>= 1.0.2)
   responds_to_parent (>= 1.1.0)
   rspec-rails (~> 2.9.0)
-  ruby-debug
   rvm-capistrano (~> 1.2.7)
   sass (~> 3)
   sass-rails (~> 3.2.3)

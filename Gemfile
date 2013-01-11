@@ -63,7 +63,6 @@ group :development, :test do
   gem 'rspec-rails', '~> 2.9.0'
   gem 'headless'
   unless ENV["CI"]
-    gem 'ruby-debug', :platform => :mri_18
     gem 'debugger', :platform => :mri_19
   end
   gem 'pry-rails'
@@ -73,12 +72,7 @@ group :test do
   gem 'capybara', '~> 1.1' # v2 and up is not r1.8 compatible.
   gem 'database_cleaner'
   gem "acts_as_fu", "~> 0.0.8"
-
-  if RUBY_VERSION.to_f >= 1.9
-    gem 'factory_girl_rails', '~> 3.0.0'
-  else
-    gem 'factory_girl_rails', '~> 1.7.0'
-  end
+  gem 'factory_girl_rails', '~> 3.0.0'
 end
 
 gem 'unicorn'
@@ -89,10 +83,10 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier',     '>= 1.0.3'
+  gem 'turbo-sprockets-rails3'
   # gem 'execjs'
   # unless ENV["CI"]
   #   gem 'therubyracer', :platform => :ruby
   # end
 end
 
-gem 'turbo-sprockets-rails3'
